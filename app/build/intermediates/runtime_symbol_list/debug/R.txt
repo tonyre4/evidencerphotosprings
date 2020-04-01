@@ -842,11 +842,12 @@ int id topPanel 0x7f07008f
 int id touch_outside 0x7f070090
 int id up 0x7f070091
 int id useLogo 0x7f070092
-int id use_flash 0x7f070093
-int id view_offset_helper 0x7f070094
-int id wide 0x7f070095
-int id withText 0x7f070096
-int id wrap_content 0x7f070097
+int id use_auto 0x7f070093
+int id use_flash 0x7f070094
+int id view_offset_helper 0x7f070095
+int id wide 0x7f070096
+int id withText 0x7f070097
+int id wrap_content 0x7f070098
 int integer abc_config_activityDefaultDur 0x7f080000
 int integer abc_config_activityShortDur 0x7f080001
 int integer app_bar_elevation_anim_duration 0x7f080002

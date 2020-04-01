@@ -843,6 +843,7 @@ id topPanel
 id touch_outside
 id up
 id useLogo
+id use_auto
 id use_flash
 id view_offset_helper
 id wide
