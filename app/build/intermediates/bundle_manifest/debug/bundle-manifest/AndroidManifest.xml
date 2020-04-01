@@ -37,7 +37,6 @@
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

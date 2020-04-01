@@ -18,15 +18,11 @@ package com.google.android.gms.samples.vision.barcodereader;
 
 import android.Manifest;
 import android.content.ContentValues;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,7 +31,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -49,10 +44,8 @@ import com.google.android.gms.vision.barcode.Barcode;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -66,6 +59,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     // use a compound button so either checkbox or switch widgets work.
     private CompoundButton autoFocus;
     private CompoundButton useFlash;
+    private CompoundButton autoCapture;
     private TextView statusMessage;
     private TextView barcodeValue;
     private EditText bcv;
@@ -105,8 +99,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
         useFlash = (CompoundButton) findViewById(R.id.use_flash);
+        autoCapture = (CompoundButton) findViewById(R.id.use_auto);
 
         autoFocus.setChecked(true);
+        autoCapture.setChecked(true);
 
         findViewById(R.id.read_barcode).setOnClickListener(this);
         findViewById(R.id.take_photo).setOnClickListener(this);
@@ -158,6 +154,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
@@ -187,14 +184,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(this, BarcodeCaptureActivity.class);
             intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
             intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
-
+            intent.putExtra(BarcodeCaptureActivity.AutoCapture, autoCapture.isChecked());
             startActivityForResult(intent, RC_BARCODE_CAPTURE);
             //bcv.setText(barcodeValue.getText());
         }
 
         if (v.getId() == R.id.take_photo) {
-
-            //dispatchTakePictureIntent();
 
             if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
             {
@@ -223,11 +218,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
 
             else {
-                //BitmapFactory.decodeFile("@android:drawable/screen_background_dark_transparent");
                 iv.setImageBitmap(null);
 
                 String n;
-                //String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                 String timeStamp = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 n = bcv.getText().toString();
                 n = n.replace(".", "_") + "_" + timeStamp + ".jpg";
@@ -272,45 +265,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         return text.matches("^[0-9]{8}\\.[0-9]{3}$");
     }
 
-    private boolean saveToInternalStorage(Bitmap bitmapImage, String name){
-        boolean ya = false;
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        // path to /data/data/yourapp/app_data/imageDir
-        //File directory = cw.getDir("Registros", Context.MODE_PRIVATE);
-        //File directory =  new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/");
-        // Create imageDir
-        //File mypath=new File(directory,name);
-        File mypath =  new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Registros/" + name);
 
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-            ya = true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if(fos != null)
-                    fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        scanMedia(mypath.getAbsolutePath());
-
-        //return mypath.getAbsolutePath();
-        return ya;
-    }
-    private void scanMedia(String path) {
-        File file = new File(path);
-        Uri uri = Uri.fromFile(file);
-        Intent scanFileIntent = new Intent(
-                Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri);
-        sendBroadcast(scanFileIntent);
-    }
 
     /**
      * Called when an activity you launched exits, giving you the requestCode
@@ -358,12 +313,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-                    //statusMessage.setText(R.string.barcode_success);
-                    //barcodeValue.setText(barcode.displayValue);
                     bcv.setText(barcode.displayValue);
                     Log.d(TAG, "Barcode read: " + barcode.displayValue);
                 } else {
-                    //statusMessage.setText(R.string.barcode_failure);
                     Log.d(TAG, "No barcode captured, intent data is null");
                 }
             } else {

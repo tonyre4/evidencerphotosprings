@@ -66,32 +66,31 @@
 38-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:29:13-56
 39            android:screenOrientation="portrait" >
 39-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:30:13-49
-40>
-41            <intent-filter>
-41-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:32:13-36:29
-42                <action android:name="android.intent.action.MAIN" />
-42-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:33:17-69
-42-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:33:25-66
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:35:17-77
-44-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:35:27-74
-45            </intent-filter>
-46        </activity>
-47        <activity
-47-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:9-42:43
-48            android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"
-48-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:19-57
-49            android:label="Read Barcode" />
-49-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:42:13-41
-50        <activity
-50-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:20:9-22:45
-51            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-51-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:20:19-85
-52            android:exported="false"
-52-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:22:19-43
-53            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-53-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:21:19-78
-54    </application>
-55
-56</manifest>
+40            <intent-filter>
+40-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:32:13-36:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:33:17-69
+41-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:33:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:35:17-77
+43-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:35:27-74
+44            </intent-filter>
+45        </activity>
+46        <activity
+46-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:9-42:43
+47            android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"
+47-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:19-57
+48            android:label="Read Barcode" />
+48-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:42:13-41
+49        <activity
+49-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:20:9-22:45
+50            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+50-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:20:19-85
+51            android:exported="false"
+51-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:22:19-43
+52            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+52-->[com.google.android.gms:play-services-base:9.4.0] /root/.gradle/caches/transforms-2/files-2.1/88e8c36599549bce77ae7e307b3102bd/play-services-base-9.4.0/AndroidManifest.xml:21:19-78
+53    </application>
+54
+55</manifest>

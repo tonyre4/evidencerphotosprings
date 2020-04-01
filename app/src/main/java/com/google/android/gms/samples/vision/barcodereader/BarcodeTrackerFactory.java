@@ -15,8 +15,6 @@
  */
 package com.google.android.gms.samples.vision.barcodereader;
 
-import android.content.Context;
-
 import com.google.android.gms.samples.vision.barcodereader.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.Tracker;
@@ -27,19 +25,22 @@ import com.google.android.gms.vision.barcode.Barcode;
  * multi-processor uses this factory to create barcode trackers as needed -- one for each barcode.
  */
 class BarcodeTrackerFactory implements MultiProcessor.Factory<Barcode> {
-    private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
-    private Context mContext;
 
-    public BarcodeTrackerFactory(GraphicOverlay<BarcodeGraphic> mGraphicOverlay,
-                                 Context mContext) {
-        this.mGraphicOverlay = mGraphicOverlay;
-        this.mContext = mContext;
+    private BarcodeGraphicTracker.BarcodeDetectorListener mDetectorListener;
+    private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
+
+    BarcodeTrackerFactory(GraphicOverlay<BarcodeGraphic> barcodeGraphicOverlay, BarcodeGraphicTracker.BarcodeDetectorListener detectorListener) {
+        mGraphicOverlay = barcodeGraphicOverlay;
+        mDetectorListener = detectorListener;
     }
 
     @Override
     public Tracker<Barcode> create(Barcode barcode) {
         BarcodeGraphic graphic = new BarcodeGraphic(mGraphicOverlay);
-        return new BarcodeGraphicTracker(mGraphicOverlay, graphic, mContext);
+        BarcodeGraphicTracker graphicTracker = new BarcodeGraphicTracker(mGraphicOverlay, graphic);
+        if(mDetectorListener != null)
+            graphicTracker.setDetectorListener(mDetectorListener);
+        return graphicTracker;
     }
 
 }
