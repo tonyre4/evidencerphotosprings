@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Ejemplo Barcode</string>
+    <string name="barcode_header">Lector</string>
+    <string name="read_barcode">Leer código</string>
+    <string name="auto_focus">Autoenfoque</string>
+    <string name="use_flash">Flash</string>
+    <string name="barcode_success">Código leído</string>
+    <string name="barcode_failure">Leer código</string>
+    <string name="barcode_error">"Error reading barcode: %1$s"</string>
+</resources>
