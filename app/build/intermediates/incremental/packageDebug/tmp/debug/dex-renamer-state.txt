@@ -1,4 +1,4 @@
-#Wed Apr 01 00:05:02 CST 2020
+#Sun Apr 05 20:11:02 CDT 2020
 base.0=/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

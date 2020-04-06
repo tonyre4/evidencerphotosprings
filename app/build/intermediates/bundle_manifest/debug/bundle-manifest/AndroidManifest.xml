@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.google.android.gms.samples.vision.barcodereader"
+    package="com.google.android.gms.samples.vision.evidencer"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -33,7 +33,7 @@
             android:value="barcode" />
 
         <activity
-            android:name="com.google.android.gms.samples.vision.barcodereader.MainActivity"
+            android:name="com.google.android.gms.samples.vision.evidencer.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"
+            android:name="com.google.android.gms.samples.vision.evidencer.BarcodeCaptureActivity"
             android:label="Read Barcode" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

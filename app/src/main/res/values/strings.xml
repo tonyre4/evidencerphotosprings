@@ -4,7 +4,7 @@
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="title_activity_main">Ejemplo Barcode</string>
+    <string name="title_activity_main">Evidenciador</string>
     <string name="barcode_header">Lector</string>
     <string name="read_barcode">Leer código</string>
     <string name="auto_focus">Autoenfoque</string>

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.google.android.gms.samples.vision.barcodereader"
+3    package="com.google.android.gms.samples.vision.evidencer"
 4    android:installLocation="auto"
 5    android:versionCode="1"
 6    android:versionName="1.0" >
@@ -58,7 +58,7 @@
 34
 35        <activity
 35-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:27:9-39:20
-36            android:name="com.google.android.gms.samples.vision.barcodereader.MainActivity"
+36            android:name="com.google.android.gms.samples.vision.evidencer.MainActivity"
 36-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:28:13-41
 37            android:configChanges="orientation|keyboardHidden"
 37-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:31:13-63
@@ -79,7 +79,7 @@
 45        </activity>
 46        <activity
 46-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:9-42:43
-47            android:name="com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"
+47            android:name="com.google.android.gms.samples.vision.evidencer.BarcodeCaptureActivity"
 47-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:41:19-57
 48            android:label="Read Barcode" />
 48-->/media/tonny/9E3C7B5A3C7B2C81/LINUX/clones/android-vision/visionSamples/barcode-reader2/app/src/main/AndroidManifest.xml:42:13-41
